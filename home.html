@@ -1,0 +1,228 @@
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+        
+        <div class="header">
+                
+
+            <div class="sidebar">
+                <a href="#" class="logo">
+                    <img src="logo.jpg" alt="Logo">
+                </a>
+                
+                <ul class="nav-links">
+                    <li><a href="#" onclick="togglehomePanel()"><i class="fa-solid fa-house"></i><p>Home</p></a></li>
+                    <li><a href="#" onclick="togglemanufacturingPanel()"><i class="fa-solid fa-industry"></i><p>Manufacturing</p></a></li>
+                    <li><a href="#" onclick="toggleaccountingPanel()"><i class="fa-solid fa-money-bills"></i><p>Accounting</p></a></li>
+                    
+                </ul>
+
+                <div class="logout">
+                    <ul class="signin">
+                        <li> <a href="#"><i class="fa-solid fa-circle-user"></i><p>Sign in</p></a></li>
+                        
+                        <li> <a href="#"><i class="fa-solid fa-user"></i><p>Register</p></a></li>
+                    </ul>
+                 </div>
+
+            </div>
+
+
+            <div class="home-panel show" id="home-panel"> <h3>Dashboard</h3>
+
+                <div class="dashboard-filters">
+                    <div class="filter">
+                        <label for="date-range">Auto date range</label>
+                        <select id="date-range">
+                            <option>This Week</option>
+                            <option>Last Week</option>
+                            <option>This Month</option>
+                            <option>Last Month</option>
+                            <option>All</option>
+                        </select>
+                    </div>
+                    <div class="filter">
+                        <label for="services">Services</label>
+                        <select id="services">
+                            <option>All</option>
+                            <option>Service A</option>
+                            <option>Service B</option>
+                            </select>
+                    </div>
+                    <div class="filter">
+                        <label for="parts">Parts</label>
+                        <select id="parts">
+                            <option>All</option>
+                            <option>Part X</option>
+                            <option>Part Y</option>
+                        </select>
+                    </div>
+                </div>
+        
+                <div class="dashboard-metrics">
+                    <div class="metric-card blue-card">
+                        <h4>Production Output</h4>
+                        <div class="metric-value">24.5</div>
+                        <div class="metric-trend"><i class="fa-solid fa-arrow-up"></i> 13%</div>
+                        <div class="metric-comparison">vs previous 7 days</div>
+                    </div>
+                    <div class="metric-card blue-card"> <h4>On-Time Delivery Rate</h4>
+                        <div class="metric-value">83.1%</div>
+                        <div class="metric-trend"><i class="fa-solid fa-arrow-down"></i> 8%</div>
+                        <div class="metric-comparison">vs previous 7 days</div>
+                    </div>
+                    <div class="metric-card blue-card"> <h4>Employee Productivity</h4>
+                        <div class="metric-value">95.3%</div>
+                        <div class="metric-trend"><i class="fa-solid fa-arrow-up"></i> 1</div>
+                        <div class="metric-comparison">vs previous 7 days</div>
+                    </div>
+                    <div class="metric-card blue-card"> <h4>Safety Incidents</h4>
+                        <div class="metric-value">3</div>
+                        <div class="metric-trend"><i class="fa-solid fa-arrow-up"></i> 2.3%</div>
+                        <div class="metric-comparison">vs previous 7 days</div>
+                    </div>
+                </div>
+        
+                <div class="dashboard-charts">
+                    <div class="chart-container full-width">
+                        <h4>Inventory Turnover</h4>
+                        <div class="line-chart">
+                            <img src="inventory-chart.png" alt="Inventory Turnover Chart" style="width: 100%; height: auto;">
+                        </div>
+                    </div>
+                    <div class="chart-container small-chart">
+                        <h4>Production Output</h4>
+                        <div class="bar-chart">
+                            <div class="bar" style="height: 60%;"></div>
+                            <div class="bar" style="height: 80%;"></div>
+                            <div class="bar" style="height: 50%;"></div>
+                            <div class="bar" style="height: 100%;"></div>
+                            <div class="bar" style="height: 75%;"></div>
+                            <div class="bar" style="height: 30%;"></div>
+                            <div class="bar" style="height: 65%;"></div>
+                        </div>
+                    </div>
+                    <div class="chart-container small-chart">
+                        <h4>On-Time Delivery Rate</h4>
+                        <div class="bar-chart">
+                            <div class="bar" style="height: 70%; background-color: purple;"></div>
+                            <div class="bar" style="height: 85%; background-color: purple;"></div>
+                            <div class="bar" style="height: 60%; background-color: purple;"></div>
+                            <div class="bar" style="height: 40%; background-color: purple;"></div>
+                            <div class="bar" style="height: 75%; background-color: purple;"></div>
+                            <div class="bar" style="height: 55%; background-color: purple;"></div>
+                            <div class="bar" style="height: 80%; background-color: purple;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="accounting-sidepanel" id="accounting-panel">
+                <div class="accounting-container">
+                    <div class="accounting-box"><i class="fa-solid fa-arrow-right"></i>Payables</div>
+                    <div class="accounting-box"><i class="fa-solid fa-arrow-left"></i>Receivables</div>
+                </div>
+            </div>
+        
+            <div class="side-panel" id="manufacturing-panel">
+                <div class="category">
+                    <h3>Production</h3>
+                    <ul>
+                        <li>Work Order ↗</li>
+                        <li>Production Plan ↗</li>
+                        <li>Stock Entry ↗</li>
+                        <li>Job Card ↗</li>
+                        <li>Downtime Entry ↗</li>
+                    </ul>
+                </div>
+                <div class="category">
+                    <h3>Bill of Materials</h3>
+                    <ul>
+                        <li>Item ↗</li>
+                        <li>Bill of Materials ↗</li>
+                        <li>Workstation Type ↗</li>
+                        <li>Workstation ↗</li>
+                        <li>Operation ↗</li>
+                        <li>Routing ↗</li>
+                    </ul>
+                </div>
+                <div class="category">
+                    <h3>Reports</h3>
+                    <ul>
+                        <li>Production Planning Report ↗</li>
+                        <li>Work Order Summary ↗</li>
+                        <li>Quality Inspection Summary ↗</li>
+                        <li>Downtime Analysis</li>
+                        <li>Job Card Summary</li>
+                        <li>BOM Search ↗</li>
+                        <li>BOM Stock Report ↗</li>
+                        <li>Production Analytics ↗</li>
+                        <li>BOM Operations Time ↗</li>
+                        <li>Work Order Consumed Materials ↗</li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="accounting-sidepanel" id="accounting-panel">
+                <div class="accounting-container">
+                    <div class="accounting-box"><i class="fa-solid fa-arrow-right"></i>Payables</div>
+                    <div class="accounting-box"><i class="fa-solid fa-arrow-left"></i>Receivables</div>
+                </div>
+            </div>
+            
+            
+
+            <div class="side-panel" id="manufacturing-panel">
+                <div class="category">
+                    <h3>Production</h3>
+                    <ul>
+                        <li>Work Order ↗</li>
+                        <li>Production Plan ↗</li>
+                        <li>Stock Entry ↗</li>
+                        <li>Job Card ↗</li>
+                        <li>Downtime Entry ↗</li>
+                    </ul>
+                </div>
+                <div class="category">
+                    <h3>Bill of Materials</h3>
+                    <ul>
+                        <li>Item ↗</li>
+                        <li>Bill of Materials ↗</li>
+                        <li>Workstation Type ↗</li>
+                        <li>Workstation ↗</li>
+                        <li>Operation ↗</li>
+                        <li>Routing ↗</li>
+                    </ul>
+                </div>
+                <div class="category">
+                    <h3>Reports</h3>
+                    <ul>
+                        <li>Production Planning Report ↗</li>
+                        <li>Work Order Summary ↗</li>
+                        <li>Quality Inspection Summary ↗</li>
+                        <li>Downtime Analysis</li>
+                        <li>Job Card Summary</li>
+                        <li>BOM Search ↗</li>
+                        <li>BOM Stock Report ↗</li>
+                        <li>Production Analytics ↗</li>
+                        <li>BOM Operations Time ↗</li>
+                        <li>Work Order Consumed Materials ↗</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+        
+    
+        
+        
+</body>
+
+</html>
